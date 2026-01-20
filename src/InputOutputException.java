@@ -1,4 +1,5 @@
-public class InputOutputException extends RuntimeException {
+public class InputOutputException extends Exception {
     public InputOutputException(String message) {
+        super("Lexical error: "+message);
     }
 }

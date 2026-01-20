@@ -1,5 +1,5 @@
 public class EngineException extends Exception {
     public EngineException(String message) {
-        super(message);
+        super("Engine error: "+message);
     }
 }
