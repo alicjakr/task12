@@ -1,4 +1,6 @@
 import java.io.*;
+import java.nio.file.AccessDeniedException;
+
 public class Evaluator {
 
     //validating expressions
@@ -102,6 +104,8 @@ public class Evaluator {
             }
         } catch (FileNotFoundException e) {
             throw new InputOutputException("file not found");
+        } catch (AccessDeniedException e) {
+            throw new InputOutputException("file cannot be opened due to insufficient permission");
         } catch (IOException e) {
             throw new InputOutputException("Error reading file: "+e.getMessage());
         }
